@@ -11,20 +11,25 @@ const App = () => {
   const exercises3 = 14
 
   return (
+      <div>
+          <Header course = {course}/>
+          <Content part1 = {part1}/>
+          <Total exercises1 = {exercises1}/>
+      </div>
+  )
+   
+}
+
+const Content = () => {
+  return (
     <div>
-      <h1>{course}</h1>
-      <p>
-        {part1} {exercises1}
-      </p>
-      <p>
-        {part2} {exercises2}
-      </p>
-      <p>
-        {part3} {exercises3}
-      </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Part part1 exercises1 />
+      <Part part2 exercises2 />
+      <Part part3 exercises3 />
     </div>
   )
 }
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
