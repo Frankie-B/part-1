@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { tsPropertySignature } from '@babel/types'
+
 
 const App = () => {
   const course = {
@@ -48,8 +48,21 @@ const Content = (props) => {
     <div>
       <Part part={props.parts[0]} />
       <Part part={props.parts[1]} />
-      <Part parts={props.parts[2]} />
+      <Part part={props.parts[2]} />
     </div>
+  )
+};
+
+const Total = (props) => {
+  let sum = 0;
+  props.parts.forEach(part => {
+    sum += part.exercises;
+  });
+
+  return (
+    <p>
+      Total number of exercises {sum}
+    </p>
   )
 };
 
