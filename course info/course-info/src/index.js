@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { tsPropertySignature } from '@babel/types'
 
 const App = () => {
   const course = {
@@ -31,17 +32,26 @@ const App = () => {
 }
 
 const Header = (props) => {
-  console.log(props)
   return (
     <h1>{props.course.name}</h1>
   )
-}
+};
 
 const Part = (props) => {
-  console.log(props);
+  return (
+    <p>{props.part.name} {props.part.exercises}</p>
+  )
+};
 
-
-}
+const Content = (props) => {
+  return (
+    <div>
+      <Part part={props.parts[0]} />
+      <Part part={props.parts[1]} />
+      <Part parts={props.parts[2]} />
+    </div>
+  )
+};
 
 
 
