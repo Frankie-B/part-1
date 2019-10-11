@@ -32,17 +32,9 @@ const App = () => {
 
 const Header = (props) => {
   console.log(props)
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 
-const Content = () => {
-  return (
-    <div>
-      <Part part1 exercise1/>
-      <Part part2 exercise2/>
-      <Part part3 exercise3/>
-    </div>
-  )
-}
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
